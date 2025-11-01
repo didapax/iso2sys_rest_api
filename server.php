@@ -165,9 +165,20 @@ function returnPersonIdByUser($user_id) {
     return $row['person_id']; // Devuelve solo el valor del nombre
 }
 
-
-
-
+/**
+ * Devuelve la fila completa de la tabla `user` para un user_id dado.
+ * Esto evita errores por referencia a returnDatUser si la función no existe.
+ * Retorna un array asociativo vacío si no se encuentra el usuario.
+ */
+function returnDatUser($user_id) {
+    global $conn;
+    $user_id = intval($user_id);
+    $resultado = mysqli_query($conn, "SELECT * FROM user WHERE user_id = $user_id");
+    if ($resultado && mysqli_num_rows($resultado) > 0) {
+        return mysqli_fetch_assoc($resultado);
+    }
+    return array();
+}
 
 function returnUnitName($id) {
     global $conn; // Asegúrate de que $conn está declarado como global

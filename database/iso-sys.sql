@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-11-2024 a las 02:48:39
+-- Tiempo de generación: 12-01-2025 a las 19:59:23
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -66,7 +66,8 @@ CREATE TABLE `exam_scores` (
 
 INSERT INTO `exam_scores` (`id`, `user_id`, `exam_id`, `score`) VALUES
 (1, 3, 2, 13.00),
-(2, 3, 4, 0.00);
+(2, 3, 4, 0.00),
+(3, 15, 4, 0.00);
 
 -- --------------------------------------------------------
 
@@ -126,7 +127,7 @@ CREATE TABLE `lessons` (
 INSERT INTO `lessons` (`id`, `unit_id`, `title`, `content`, `lesson_order`, `summary`, `url`, `isDeleted`) VALUES
 (3, 3, 'unidad 13: suma y resta fracciones (diferentes denominadores)', '', 2, 'esto es un summary', 'sadasd', 0),
 (4, 3, 'el puntos', NULL, 3, 'esta es una prueba', 'https://youtu.be/leUgu-6bWzY', 0),
-(5, 4, 'el enfoque sistematico', NULL, 2, 'asdasd', 'test.mp4', 0),
+(5, 4, 'el enfoque sistematico', NULL, 2, 'asdasd', 'https://youtu.be/leugu-6bwzy', 0),
 (6, 4, 'introducción a los sistemas', NULL, 1, 'this is a description', 'https://youtu.be/leUgu-6bWzY', 0),
 (7, 3, 'cuarta ', NULL, 4, 'this is a summary', 'asdasdas', 0),
 (8, 7, 'titulo leccion 1', NULL, 1, 'esto es un texto', 'https://youtu.be/leUgu-6bWzY', 0),
@@ -141,7 +142,8 @@ INSERT INTO `lessons` (`id`, `unit_id`, `title`, `content`, `lesson_order`, `sum
 (17, 4, 'asdasdas', NULL, 6, 'dasdasdd', 'asdasdas', 0),
 (18, 4, 'asdasd', NULL, 15, 'asdasdasd', 'asdasdasd', 1),
 (19, 4, 'aaaaaaa', NULL, 10, 'asdasda', 'test.mp4', 1),
-(20, 4, 'titulo 111', NULL, 11, 'awanile', 'test.mp4', 0);
+(20, 4, 'titulo 111', NULL, 11, 'awanile', 'https://youtu.be/leugu-6bwzy', 0),
+(21, 4, 'titulo provisional', NULL, 10, 'asdasd', '', 0);
 
 -- --------------------------------------------------------
 
@@ -189,7 +191,8 @@ INSERT INTO `person` (`id`, `nationality`, `cedula`, `name`, `second_name`, `las
 (35, 'V-', '4949895', 'meche', '', 'figuera', '', '04128844454', '1992-10-14', '', 'no se'),
 (36, 'V-', '4949894', 'pierry', '', 'moya', '', '04148581138', '2005-12-05', '', 'no se '),
 (37, 'V-', '28128555', 'queso', '', 'alfonsi', '', '', '2024-11-11', '', ''),
-(38, 'V-', '3498555', 'lourdes', '', 'figuera', '', '04128581138', '2006-01-01', '', 'no lo se');
+(38, 'V-', '3498555', 'lourdes', '', 'figuera', '', '04128581138', '2006-01-01', '', 'no lo se'),
+(39, '', '', 'asdasd', '', 'dasdasdd', '', '', '2024-12-12', '', '');
 
 -- --------------------------------------------------------
 
@@ -337,7 +340,8 @@ INSERT INTO `user` (`user_id`, `person_id`, `password`, `isAdmin`, `email`, `isB
 (11, 35, '$2y$10$NZB.guHzmqd.UcOPi4AWru.ZX1dI3LOMakfvXUkOahGjMCIL2FEwq', 0, 'meme@gmail.com', 0, 0, '2024-09-09'),
 (12, 36, '$2y$10$9XnQVh4d11GWnZbyximyfem82yd8hw3w3WyV5uR1YGPz8S8XMwTxm', 0, 'Pierry@gmail.com', 0, 0, '2024-11-15'),
 (13, 37, '$2y$10$MH2R7LM088XFiq6yQr3GTugJfFudPu67nsF7Aea1YxzKFvzZTlv.q', 0, 'queso@gmail.com', 0, 0, '2024-11-15'),
-(14, 38, '$2y$10$Nj6ijB8Af27zgWm7ibHrd.ody8q.uXE5r2Jjxbx21cGTA5dDkOfbu', 0, 'lulu@gmail.com', 0, 0, '2024-11-18');
+(14, 38, '$2y$10$Nj6ijB8Af27zgWm7ibHrd.ody8q.uXE5r2Jjxbx21cGTA5dDkOfbu', 0, 'lulu@gmail.com', 0, 0, '2024-11-18'),
+(15, 39, '$2y$10$9OjIa3ohyIoEKYrvZdi/VuXZQwsnDGOfImJdwToZJLVMsyA1RgOH6', 1, 'administrador@gmail.com', 0, 0, '2024-12-22');
 
 -- --------------------------------------------------------
 
@@ -374,7 +378,12 @@ INSERT INTO `user_history` (`id`, `user_id`, `action`, `date`) VALUES
 (30, 3, 'admin ha borrado a un usuario', '2024-11-18 04:42:16'),
 (31, 3, 'admin ha desabilitado un Examen', '2024-11-18 13:34:14'),
 (32, 3, 'admin ha editado una Lección', '2024-11-18 18:32:33'),
-(33, 3, 'admin ha creado un examen', '2024-11-19 01:41:57');
+(33, 3, 'admin ha creado un examen', '2024-11-19 01:41:57'),
+(34, 15, 'asdasd ha creado una Lección', '2025-01-10 16:50:24'),
+(35, 15, 'asdasd ha editado una Lección', '2025-01-11 01:07:58'),
+(36, 15, 'asdasd ha editado una Lección', '2025-01-11 01:09:06'),
+(37, 15, 'asdasd ha editado una Lección', '2025-01-11 01:11:15'),
+(38, 15, 'asdasd ha editado una Lección', '2025-01-11 01:12:18');
 
 -- --------------------------------------------------------
 
@@ -404,6 +413,38 @@ INSERT INTO `videos` (`id`, `lesson_id`, `file`, `name`) VALUES
 (8, 21, 'videos/test.mp4', 'test.mp4'),
 (9, 20, 'videos/test.mp4', 'test.mp4'),
 (10, 5, 'videos/edit_test.mp4', 'edit_test.mp4');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `watched_videos`
+--
+
+CREATE TABLE `watched_videos` (
+  `id` int(10) NOT NULL,
+  `user_id` int(10) NOT NULL,
+  `lesson_id` int(10) NOT NULL,
+  `watched` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `watched_videos`
+--
+
+INSERT INTO `watched_videos` (`id`, `user_id`, `lesson_id`, `watched`) VALUES
+(15, 15, 16, 1),
+(18, 15, 16, 1),
+(19, 15, 16, 1),
+(20, 15, 16, 1),
+(21, 15, 5, 1),
+(22, 15, 5, 1),
+(23, 15, 16, 1),
+(24, 15, 16, 1),
+(25, 15, 5, 1),
+(26, 15, 5, 1),
+(27, 15, 16, 1),
+(28, 15, 20, 1),
+(29, 15, 14, 1);
 
 --
 -- Índices para tablas volcadas
@@ -492,6 +533,13 @@ ALTER TABLE `videos`
   ADD KEY `lesson_id` (`lesson_id`);
 
 --
+-- Indices de la tabla `watched_videos`
+--
+ALTER TABLE `watched_videos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`,`lesson_id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -505,7 +553,7 @@ ALTER TABLE `exams`
 -- AUTO_INCREMENT de la tabla `exam_scores`
 --
 ALTER TABLE `exam_scores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `guides`
@@ -517,13 +565,13 @@ ALTER TABLE `guides`
 -- AUTO_INCREMENT de la tabla `lessons`
 --
 ALTER TABLE `lessons`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `person`
 --
 ALTER TABLE `person`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de la tabla `questions`
@@ -553,19 +601,25 @@ ALTER TABLE `units`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `user_history`
 --
 ALTER TABLE `user_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de la tabla `videos`
 --
 ALTER TABLE `videos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT de la tabla `watched_videos`
+--
+ALTER TABLE `watched_videos`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- Restricciones para tablas volcadas
@@ -591,23 +645,10 @@ ALTER TABLE `lessons`
   ADD CONSTRAINT `lessons_ibfk_1` FOREIGN KEY (`unit_id`) REFERENCES `units` (`id`);
 
 --
--- Filtros para la tabla `questions_data`
---
-ALTER TABLE `questions_data`
-  ADD CONSTRAINT `questions_data_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`),
-  ADD CONSTRAINT `questions_data_ibfk_2` FOREIGN KEY (`exam_id`) REFERENCES `exams` (`id`);
-
---
 -- Filtros para la tabla `units`
 --
 ALTER TABLE `units`
   ADD CONSTRAINT `units_ibfk_1` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`id`);
-
---
--- Filtros para la tabla `user_history`
---
-ALTER TABLE `user_history`
-  ADD CONSTRAINT `user_history_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
