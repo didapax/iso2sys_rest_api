@@ -318,7 +318,6 @@ function returnExistingFiles($lesson_id)
 }
 
 
-
 function addToHistory($user_id, $action) {
     global $conn; // Necesario para acceder a la variable $conn
     $query = "INSERT INTO user_history (user_id,action) VALUES ($user_id,'$action')"; // Usa comillas simples para los valores de texto
